@@ -13,9 +13,11 @@
   <tbody>
     <% @things.each do |thing| %>
       <tr>
-        <td><%= thing.name %></td>
-        <td><%= link_to 'Show', thing %></td>
-        <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+        <td>
+          <%= form_for thing do |f| %>
+            <%= f.text_field :name , onChange:"$(this).parents('form').submit()" %>
+          <%end%>
+        </td>
         <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
