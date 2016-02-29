@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Things</h1>
-
 <table>
   <thead>
     <tr>
@@ -14,8 +12,8 @@
     <% @things.each do |thing| %>
       <tr>
         <td>
-          <%= form_for thing do |f| %>
-            <%= f.text_field :name , onChange:"$(this).parents('form').submit()" %>
+          <%= form_for thing, turboboost: true do |f| %>
+            <%= f.text_field :name ,onChange:"$(this).parents('form').submit()" %>
           <%end%>
         </td>
         <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,5 +23,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Thing', new_thing_path %>
