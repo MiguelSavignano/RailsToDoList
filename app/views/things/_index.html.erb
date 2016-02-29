@@ -16,7 +16,7 @@
             <%= f.text_field :name ,onChange:"$(this).parents('form').submit()" %>
           <%end%>
         </td>
-        <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' }, turboboost: true %></td>
       </tr>
     <% end %>
   </tbody>
