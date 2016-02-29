@@ -12,7 +12,7 @@
     <% @things.each do |thing| %>
       <tr>
         <td>
-          <%= form_for thing, turboboost: true do |f| %>
+          <%= form_for thing, turboboost: true, remote: true do |f| %>
             <%= f.text_field :name ,onChange:"$(this).parents('form').submit()" %>
           <%end%>
         </td>

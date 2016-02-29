@@ -48,6 +48,7 @@ class ThingsController < ApplicationController
     respond_to do |format|
       if @thing.update(thing_params)
         format.html { redirect_to home_things_path, notice: 'Thing was successfully updated.' }
+        format.js { render json: @thing }
         format.json { render :show, status: :ok, location: @thing }
       else
         format.html { render :edit }
